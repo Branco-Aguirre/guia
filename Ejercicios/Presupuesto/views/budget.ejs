@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Presupuesto</title>
+</head>
+<body>
+  <h1>Presupuesto</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% selectedProducts.forEach(product => { %>
+        <tr>
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td>$<%= product.price %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total</td>
+        <td>$<%= total %></td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="button-container">
+    <button onclick="window.print()">Imprimir</button>
+    <a href="/" class="button">Volver a presupuestar</a>
+  </div>
+</body>
+</html>

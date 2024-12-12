@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Seleccionar productos</title>
+</head>
+<body>
+  <h1>Selecciona productos para tu presupuesto</h1>
+  <form action="/budget" method="get">
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <label>
+            <input type="checkbox" name="products" value="<%= product.id %>">
+            <strong><%= product.title %></strong> - $<%= product.price %>
+          </label>
+        </li>
+      <% }); %>
+    </ul>
+    <button type="submit">Generar presupuesto</button>
+  </form>
+</body>
+</html>
